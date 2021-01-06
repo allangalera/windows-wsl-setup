@@ -22,6 +22,7 @@ sudo apt install -y curl
 sudo apt install -y htop
 sudo apt install -y jq      # sed json files
 sudo apt install -y ripgrep # better grep
+sudo apt install -y tree    # see folder tree structure
 
 # install nvm and latest node
 nvm_version=$(curl --silent "https://api.github.com/repos/nvm-sh/nvm/releases/latest" | grep "tag_name" | sed -E 's/.*"([^"]+)".*/\1/')
