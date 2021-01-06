@@ -11,7 +11,7 @@ end
 # custom functions
 # customize greeting message
 function fish_greeting
-  printf "Welcome! Let's fish!\n"
+  printf ""
 end
 # open gitkraken on a background job
 function gk
