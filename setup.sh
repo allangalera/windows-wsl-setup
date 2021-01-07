@@ -6,12 +6,14 @@ sudo apt upgrade -y
 # install basic tools and newest git
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo apt update -y
-sudo apt install -y build-essential checkinstall libssl-dev git
+sudo apt install -y build-essential checkinstall libssl-dev git software-properties-common apt-transport-https ca-certificates
 
 # configure default git branch to main
 git config --global init.defaultBranch main
 
 # dependencies to x-server
+# this is used to open GUI applications like gitkraken :)
+# follow this tutorial https://nickymeuleman.netlify.app/blog/gui-on-wsl2-cypress
 sudo apt install-y libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
 # add permission to dbus to run without password
 echo (whoami)" ALL = (root) NOPASSWD: /etc/init.d/dbus" | sudo tee -a /etc/sudoers.d/dbus
@@ -62,6 +64,13 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher add FabioAntunes/fish-nvm # port nvm to fish
 fisher add edc/bass              # Bass makes it easy to use utilities written for Bash in fish shell.
 fisher install jorgebucaran/autopair.fish
+
+
+# install gitkraken (git GUI application)
+wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+sudo dpkg -i gitkraken-amd64.deb
+sudo apt install -f
+rm -rf gitkraken-amd64.deb
 
 # TODO: install vs-code extensions
 
