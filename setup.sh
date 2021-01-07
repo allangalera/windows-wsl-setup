@@ -11,6 +11,13 @@ sudo apt install -y build-essential checkinstall libssl-dev git
 # configure default git branch to main
 git config --global init.defaultBranch main
 
+# dependencies to x-server
+sudo apt install-y libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+# add permission to dbus to run without password
+echo (whoami)" ALL = (root) NOPASSWD: /etc/init.d/dbus" | sudo tee -a /etc/sudoers.d/dbus
+# make sure you have https://sourceforge.net/projects/vcxsrv/ installed
+# when running use "start as client" > and select "disable access control"
+
 # extracting tools
 sudo apt install -y p7zip-full zip unzip
 
@@ -24,7 +31,7 @@ sudo apt install -y jq      # sed json files
 sudo apt install -y ripgrep # better grep
 sudo apt install -y tree    # see folder tree structure
 
-# install nvm and latest node
+# install nvm, altest stable and current node and set stable as default
 nvm_version=$(curl --silent "https://api.github.com/repos/nvm-sh/nvm/releases/latest" | grep "tag_name" | sed -E 's/.*"([^"]+)".*/\1/')
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$nvm_version/install.sh | bash
 nvm install 'lts/*'
@@ -55,6 +62,8 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher add FabioAntunes/fish-nvm # port nvm to fish
 fisher add edc/bass              # Bass makes it easy to use utilities written for Bash in fish shell.
 fisher install jorgebucaran/autopair.fish
+
+# TODO: install vs-code extensions
 
 # uninstall
 sudo apt -y autoremove
