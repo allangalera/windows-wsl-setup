@@ -1,3 +1,6 @@
+# add cargo to path
+set -gx PATH /home/allangalera/.cargo/bin $PATH
+
 # set display variable to use on x-server
 export DISPLAY=(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 
@@ -28,5 +31,9 @@ end
 eval (ssh-agent -c) &> /dev/null
 # add ssh keys to agent
 ssh-add (find ~/.ssh -type f -name "*.pub" | sed -E 's/\.pub//') &> /dev/null
+
+#aliases
+alias ls='lsd'
+
 # open terminal inside ubuntu home folder
 cd ~
