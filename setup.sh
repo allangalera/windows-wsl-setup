@@ -72,6 +72,10 @@ sudo dpkg -i gitkraken-amd64.deb
 sudo apt install -f
 rm -rf gitkraken-amd64.deb
 
+# install rust cargo packages
+cargo install lsd # prettier ls
+cargo install rm-improved # safe rm
+
 # TODO: install vs-code extensions
 
 # uninstall
