@@ -76,6 +76,7 @@ rm -rf gitkraken-amd64.deb
 cargo install lsd # prettier ls
 cargo install rm-improved # safe rm
 cargo install gitui # guit ui for the terminal
+cargo install bottom # better than top (in my opinion)
 
 # TODO: install vs-code extensions
 
