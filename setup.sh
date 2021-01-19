@@ -28,7 +28,6 @@ sudo apt install default-jre -y
 
 # tools
 sudo apt install -y curl
-sudo apt install -y htop
 sudo apt install -y jq      # sed json files
 sudo apt install -y ripgrep # better grep
 sudo apt install -y tree    # see folder tree structure
