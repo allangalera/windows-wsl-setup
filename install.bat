@@ -30,7 +30,6 @@ winget install WhatsApp.WhatsApp
 winget install SlackTechnologies.Slack
 winget install Valve.Steam
 winget install Twilio.Authy
-winget install Bitwarden.Bitwarden
 winget install OpenVPNTechnologies.OpenVPN
 winget install BraveSoftware.BraveBrowser
 winget install Microsoft.VisualStudioCode
@@ -38,6 +37,8 @@ winget install plex.plexmediaserver
 winget install qBittorrent.qBittorrent
 winget install rammichael.7+TaskbarTweaker
 winget install GitHub.cli
+winget install Zoom.Zoom
+winget install Figma.Figma
 
 @REM vscode extensions
 code --install-extension dracula-theme.theme-dracula
@@ -49,7 +50,6 @@ code --install-extension formulahendry.auto-rename-tag
 code --install-extension wmaurer.change-case
 code --install-extension aaron-bond.better-comments
 code --install-extension vscode-icons-team.vscode-icons
-code --install-extension Shan.code-settings-sync
 code --install-extension wix.vscode-import-cost
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension wwm.better-align
@@ -57,3 +57,11 @@ code --install-extension pnp.polacode
 code --install-extension oderwat.indent-rainbow
 code --install-extension bmalehorn.vscode-fish
 code --install-extension chakrounanas.turbo-console-log
+code --install-extension editorconfig.editorconfig
+code --install-extension stylelint.vscode-stylelint
+code --install-extension netcorext.uuid-generator
+code --install-extension rangav.vscode-thunder-client
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension mikestead.dotenv
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension pnp.polacode
