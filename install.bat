@@ -39,6 +39,8 @@ winget install rammichael.7+TaskbarTweaker
 winget install GitHub.cli
 winget install Zoom.Zoom
 winget install Figma.Figma
+winget install dbeaver.dbeaver
+winget install Docker.DockerDesktop
 
 @REM vscode extensions
 code --install-extension dracula-theme.theme-dracula
