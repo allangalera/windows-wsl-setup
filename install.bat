@@ -41,6 +41,7 @@ winget install Zoom.Zoom
 winget install Figma.Figma
 winget install dbeaver.dbeaver
 winget install Docker.DockerDesktop
+winget install NickeManarin.ScreenToGif
 
 @REM vscode extensions
 code --install-extension dracula-theme.theme-dracula
