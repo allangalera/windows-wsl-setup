@@ -68,3 +68,4 @@ code --install-extension dbaeumer.vscode-eslint
 code --install-extension mikestead.dotenv
 code --install-extension ms-vscode-remote.remote-wsl
 code --install-extension pnp.polacode
+code --install-extension svelte.svelte-vscode

@@ -14,7 +14,9 @@ git config --global init.defaultBranch main
 # dependencies to x-server
 # this is used to open GUI applications like gitkraken :)
 # follow this tutorial https://nickymeuleman.netlify.app/blog/gui-on-wsl2-cypress
-sudo apt install -y libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+sudo apt install -y libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libsoup2.4-dev
+# tauri dependencies
+sudp apt install -y libsoup2.4-dev libwebkit2gtk-4.0-dev
 # add permission to dbus to run without password
 echo $(whoami)" ALL = (root) NOPASSWD: /etc/init.d/dbus" | sudo tee -a /etc/sudoers.d/dbus
 # make sure you have https://sourceforge.net/projects/vcxsrv/ installed
