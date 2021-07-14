@@ -22,6 +22,10 @@ echo $(whoami)" ALL = (root) NOPASSWD: /etc/init.d/dbus" | sudo tee -a /etc/sudo
 # make sure you have https://sourceforge.net/projects/vcxsrv/ installed
 # when running use "start as client" > and select "disable access control"
 
+# run docker commands without sudo
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
 # extracting tools
 sudo apt install -y p7zip-full zip unzip
 
