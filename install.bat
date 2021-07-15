@@ -42,6 +42,7 @@ winget install Figma.Figma
 winget install dbeaver.dbeaver
 winget install Docker.DockerDesktop
 winget install NickeManarin.ScreenToGif
+winget install Insomnia.Insomnia
 
 @REM vscode extensions
 code --install-extension dracula-theme.theme-dracula
