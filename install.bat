@@ -16,11 +16,13 @@ winget install Mozilla.Firefox
 winget install Notepad++.Notepad++
 winget install Microsoft.PowerToys
 winget install Git.Git
+
 @REM maybe change to other terminal
 winget install Microsoft.WindowsTerminal
 winget install Eugeny.Terminus
 winget install 7zip.7zip
 winget install voidtools.Everything
+
 @REM tool to have GUI on WSL remove when is natively available
 winget install marha.VcXsrv
 winget install Discord.Discord
@@ -30,8 +32,15 @@ winget install WhatsApp.WhatsApp
 winget install SlackTechnologies.Slack
 winget install Valve.Steam
 winget install Twilio.Authy
+@REM work vpns
+winget install Fortinet.FortClientVPN
 winget install OpenVPNTechnologies.OpenVPN
+
+@REM browsers
 winget install BraveSoftware.BraveBrowser
+winget install Mozilla.Firefox
+winget install Google.Chrome
+
 winget install Microsoft.VisualStudioCode
 winget install plex.plexmediaserver
 winget install qBittorrent.qBittorrent
@@ -39,10 +48,17 @@ winget install rammichael.7+TaskbarTweaker
 winget install GitHub.cli
 winget install Zoom.Zoom
 winget install Figma.Figma
+
+@REM SQL GUI softwares
 winget install dbeaver.dbeaver
+winget install PostgreSQL.pgAdmin
+
 winget install Docker.DockerDesktop
 winget install NickeManarin.ScreenToGif
 winget install Insomnia.Insomnia
+
+@REM Iriun - cellphone as webcam
+winget install Iriun.IriunWebcam 
 
 @REM vscode extensions
 code --install-extension dracula-theme.theme-dracula
