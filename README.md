@@ -1,4 +1,4 @@
-# wsl-initial-setup
+# windows-wsl-setup
 
 ## Windows programs instalation
 

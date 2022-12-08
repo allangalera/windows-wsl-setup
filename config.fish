@@ -1,11 +1,9 @@
 # add cargo to path
 set -gx PATH /home/allangalera/.cargo/bin $PATH
 
-# set display variable to use on x-server
-export DISPLAY=(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-
-# initialize dbus
-sudo /etc/init.d/dbus start &> /dev/null
+# add volta to path
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
 
 function ll
     ls -lh $argv
