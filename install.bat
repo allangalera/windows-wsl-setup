@@ -10,6 +10,9 @@ powershell dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsy
 @REM enable virtual machine
 powershell dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 
+wsl --install
+wsl --install -d Ubuntu
+
 winget install VideoLAN.VLC
 winget install Bitwarden.Bitwarden
 winget install Mozilla.Firefox
@@ -17,24 +20,19 @@ winget install Notepad++.Notepad++
 winget install Microsoft.PowerToys
 winget install Git.Git
 
-@REM maybe change to other terminal
-winget install Microsoft.WindowsTerminal
-winget install Eugeny.Terminus
 winget install 7zip.7zip
-winget install voidtools.Everything
+@REM winget install voidtools.Everything
 
-@REM tool to have GUI on WSL remove when is natively available
-winget install marha.VcXsrv
 winget install Discord.Discord
-winget install Spotify.Spotify
+@REM spotify from winget has an error - installed from msstore
+@REM winget install Spotify.Spotify
+winget install 9NCBCSZSJRSB
 winget install Telegram.TelegramDesktop
 winget install WhatsApp.WhatsApp
 winget install SlackTechnologies.Slack
 winget install Valve.Steam
-winget install Twilio.Authy
-@REM work vpns
-winget install Fortinet.FortClientVPN
-winget install OpenVPNTechnologies.OpenVPN
+@REM got 0x80190193 : Forbidden (403) last time I tried to install authy
+@REM winget install Twilio.Authy
 
 @REM browsers
 winget install BraveSoftware.BraveBrowser
@@ -44,21 +42,18 @@ winget install Google.Chrome
 winget install Microsoft.VisualStudioCode
 winget install plex.plexmediaserver
 winget install qBittorrent.qBittorrent
-winget install rammichael.7+TaskbarTweaker
-winget install GitHub.cli
 winget install Zoom.Zoom
-winget install Figma.Figma
 
 @REM SQL GUI softwares
 winget install dbeaver.dbeaver
-winget install PostgreSQL.pgAdmin
 
+@REM change to rancher because Docker Desktop is paid now
 winget install Docker.DockerDesktop
-winget install NickeManarin.ScreenToGif
 winget install Insomnia.Insomnia
 
 @REM Iriun - cellphone as webcam
 winget install Iriun.IriunWebcam 
+winget install --id Starship.Starship
 
 @REM vscode extensions
 code --install-extension dracula-theme.theme-dracula
@@ -73,7 +68,6 @@ code --install-extension vscode-icons-team.vscode-icons
 code --install-extension wix.vscode-import-cost
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension wwm.better-align
-code --install-extension pnp.polacode
 code --install-extension oderwat.indent-rainbow
 code --install-extension bmalehorn.vscode-fish
 code --install-extension chakrounanas.turbo-console-log
@@ -84,5 +78,4 @@ code --install-extension rangav.vscode-thunder-client
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension mikestead.dotenv
 code --install-extension ms-vscode-remote.remote-wsl
-code --install-extension pnp.polacode
 code --install-extension svelte.svelte-vscode

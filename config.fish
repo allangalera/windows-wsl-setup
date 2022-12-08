@@ -16,11 +16,7 @@ end
 function fish_greeting
   printf ""
 end
-# open gitkraken on a background job
-function gk
-  set dir $argv[1] (pwd) # use a directory if you pass it in, otherwise cwd
-  nohup gitkraken -p $dir &>/dev/null &
-end
+
 # mkdir and cd into it
 function mkcdir
     command mkdir -p $argv[1]
@@ -37,3 +33,6 @@ alias ls='lsd'
 
 # open terminal inside ubuntu home folder
 cd ~
+
+# initialize starship
+starship init fish | source

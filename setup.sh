@@ -11,16 +11,8 @@ sudo apt install -y build-essential checkinstall libssl-dev git software-propert
 # configure default git branch to main
 git config --global init.defaultBranch main
 
-# dependencies to x-server
-# this is used to open GUI applications like gitkraken :)
-# follow this tutorial https://nickymeuleman.netlify.app/blog/gui-on-wsl2-cypress
-sudo apt install -y libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libsoup2.4-dev
 # tauri dependencies
-sudp apt install -y libsoup2.4-dev libwebkit2gtk-4.0-dev
-# add permission to dbus to run without password
-echo $(whoami)" ALL = (root) NOPASSWD: /etc/init.d/dbus" | sudo tee -a /etc/sudoers.d/dbus
-# make sure you have https://sourceforge.net/projects/vcxsrv/ installed
-# when running use "start as client" > and select "disable access control"
+sudo apt install -y libsoup2.4-dev libwebkit2gtk-4.0-dev
 
 # run docker commands without sudo
 sudo groupadd docker
@@ -41,7 +33,9 @@ sudo apt install -y tree    # see folder tree structure
 # install volta instead of nvm
 curl https://get.volta.sh | bash
 volta install node
+volta install npm
 volta install yarn
+volta install pnpm
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -50,7 +44,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 sudo apt install fish -y
 chsh -s /usr/bin/fish
 mkdir -p ~/.config/fish
-curl -o ~/.config/fish/config.fish https://raw.githubusercontent.com/allangalera/wsl-initial-setup/main/config.fish
+curl -o ~/.config/fish/config.fish https://raw.githubusercontent.com/allangalera/windows-wsl-setup/main/config.fish
 
 # install oh-my-fish and theme
 curl -L https://get.oh-my.fish | fish
@@ -60,6 +54,10 @@ omf install agnoster
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install edc/bass              # Bass makes it easy to use utilities written for Bash in fish shell.
 fisher install jorgebucaran/autopair.fish
+
+# install starship
+curl -sS https://starship.rs/install.sh | sh
+
 
 # install rust cargo packages
 cargo install lsd # prettier ls
