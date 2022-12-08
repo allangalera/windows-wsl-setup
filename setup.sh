@@ -40,6 +40,9 @@ volta install pnpm
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
+# install starship
+curl -sS https://starship.rs/install.sh | sh
+
 # install fish shell, set as default, download config file
 sudo apt install fish -y
 chsh -s /usr/bin/fish
@@ -54,10 +57,6 @@ omf install agnoster
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install edc/bass              # Bass makes it easy to use utilities written for Bash in fish shell.
 fisher install jorgebucaran/autopair.fish
-
-# install starship
-curl -sS https://starship.rs/install.sh | sh
-
 
 # install rust cargo packages
 cargo install lsd # prettier ls
