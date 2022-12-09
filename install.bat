@@ -54,6 +54,8 @@ winget install Insomnia.Insomnia
 @REM Iriun - cellphone as webcam
 winget install Iriun.IriunWebcam 
 winget install --id Starship.Starship
+@REM Remote desktop open source
+winget install --id RustDesk.RustDesk
 
 @REM vscode extensions
 code --install-extension dracula-theme.theme-dracula
