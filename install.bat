@@ -13,6 +13,7 @@ powershell dism.exe /online /enable-feature /featurename:VirtualMachinePlatform 
 wsl --install
 wsl --install -d Ubuntu
 
+winget install --id Microsoft.VisualStudio.2022.BuildTools
 winget install VideoLAN.VLC
 winget install Bitwarden.Bitwarden
 winget install Mozilla.Firefox
