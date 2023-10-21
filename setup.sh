@@ -37,6 +37,12 @@ volta install npm
 volta install yarn
 volta install pnpm
 
+# install Deno
+curl -fsSL https://deno.land/x/install/install.sh | sh
+
+# install Bun
+curl -fsSL https://bun.sh/install | bash 
+
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
@@ -45,7 +51,7 @@ curl -sS https://starship.rs/install.sh | sh
 
 # install fish shell, set as default, download config file
 sudo apt install fish -y
-chsh -s /usr/bin/fish
+chsh -s $(which fish)  # make fish default shell
 mkdir -p ~/.config/fish
 curl -o ~/.config/fish/config.fish https://raw.githubusercontent.com/allangalera/windows-wsl-setup/main/config.fish
 
@@ -67,7 +73,7 @@ cargo install broot # tree file explorer
 cargo install fd-find # better find
 cargo install hyperfine # benchmarking tool.
 cargo install gping # Ping, but with a graph.
-cargo install dprint # faster prittier
+# cargo install dprint # faster prittier
 
 # uninstall
 sudo apt -y autoremove

@@ -5,6 +5,9 @@ set -gx PATH /home/allangalera/.cargo/bin $PATH
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 
+# add deno to path
+set -gx PATH /home/allangalera/.deno/bin $PATH
+
 function ll
     ls -lh $argv
 end
@@ -29,8 +32,20 @@ ssh-add (find ~/.ssh -type f -name "*.pub" | sed -E 's/\.pub//') &> /dev/null
 #aliases
 alias ls='lsd'
 
-# open terminal inside ubuntu home folder
-cd ~
-
 # initialize starship
 starship init fish | source
+
+# pnpm
+set -gx PNPM_HOME "/home/allangalera/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+# bun end
+
+# open terminal inside ubuntu home folder
+cd ~

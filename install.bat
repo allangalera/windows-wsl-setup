@@ -14,52 +14,72 @@ wsl --install
 wsl --install -d Ubuntu
 
 winget install --id Microsoft.VisualStudio.2022.BuildTools
-winget install VideoLAN.VLC
-winget install Bitwarden.Bitwarden
-winget install Mozilla.Firefox
-winget install Notepad++.Notepad++
-winget install Microsoft.PowerToys
-winget install Git.Git
+@REM winget install Microsoft.VisualStudio.2022.BuildTools --force --override "--wait --passive --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --add Microsoft.VisualStudio.Component.Windows11SDK.22000"
+@REM possible command to install Visual Studio BuildTools with
+@REM needed components (like Visual C++ tools)
 
-winget install 7zip.7zip
+winget install --id VideoLAN.VLC
+winget install --id Bitwarden.Bitwarden
+winget install --id Notepad++.Notepad++
+winget install --id Microsoft.PowerToys
+winget install --id Git.Git
+
+winget install --id  7zip.7zip
 @REM winget install voidtools.Everything
 
-winget install Discord.Discord
-@REM spotify from winget has an error - installed from msstore
-@REM winget install Spotify.Spotify
-winget install 9NCBCSZSJRSB
-winget install Telegram.TelegramDesktop
-winget install WhatsApp.WhatsApp
-winget install SlackTechnologies.Slack
-winget install Valve.Steam
+winget install --id Discord.Discord
+@REM spotify
+winget install --id 9NCBCSZSJRSB
+winget install --id Telegram.TelegramDesktop
+@REM whatsapp
+winget install --id 9NKSQGP7F2NH
+winget install --id SlackTechnologies.Slack
+winget install --id Valve.Steam
 @REM got 0x80190193 : Forbidden (403) last time I tried to install authy
 @REM winget install Twilio.Authy
 
 @REM browsers
-winget install BraveSoftware.BraveBrowser
-winget install Mozilla.Firefox
-winget install Google.Chrome
+winget install --id BraveSoftware.BraveBrowser
+winget install --id Mozilla.Firefox
+winget install --id Google.Chrome
 
-winget install Microsoft.VisualStudioCode
-winget install plex.plexmediaserver
-winget install qBittorrent.qBittorrent
-winget install Zoom.Zoom
+
+@REM Rust
+winget install --id Rustlang.Rust.MSVC
+@REM For Rust to work also needs to open Visual Studio Installer
+@REM and install Visual C++ tools
+
+@REM winget install --id  plex.plexmediaserver
+@REM winget install --id  qBittorrent.qBittorrent
+@REM winget install --id  Zoom.Zoom
 
 @REM SQL GUI softwares
-winget install dbeaver.dbeaver
+@REM winget install --id  dbeaver.dbeaver
 
 @REM change to rancher because Docker Desktop is paid now
-winget install Docker.DockerDesktop
-winget install Insomnia.Insomnia
+@REM winget install --id  Docker.DockerDesktop
+@REM Insomnia now needs login
+@REM probably going to use Bruno now (usebruno.com)
+@REM winget install --id  Insomnia.Insomnia
 
 @REM Iriun - cellphone as webcam
-winget install Iriun.IriunWebcam 
-winget install --id Starship.Starship
-@REM Remote desktop open source
-winget install --id RustDesk.RustDesk
+winget install --id Iriun.IriunWebcam 
 
+@REM Shell prompt
+winget install --id Starship.Starship
+@REM Allow execution of powershell scripts
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+@REM Create profile for powershell
+New-Item $PROFILE
+@REM Add script to initialize Startship
+Set-Content $PROFILE "Invoke-Expression (&starship init powershell)"
+
+@REM Remote desktop open source
+@REM winget install --id RustDesk.RustDesk
+
+@REM VSCode
+winget install --id Microsoft.VisualStudioCode
 @REM vscode extensions
-code --install-extension dracula-theme.theme-dracula
 code --install-extension eamodio.gitlens
 code --install-extension CoenraadS.bracket-pair-colorizer
 code --install-extension esbenp.prettier-vscode
@@ -67,7 +87,6 @@ code --install-extension formulahendry.auto-close-tag
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension wmaurer.change-case
 code --install-extension aaron-bond.better-comments
-code --install-extension vscode-icons-team.vscode-icons
 code --install-extension wix.vscode-import-cost
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension wwm.better-align
@@ -77,7 +96,6 @@ code --install-extension chakrounanas.turbo-console-log
 code --install-extension editorconfig.editorconfig
 code --install-extension stylelint.vscode-stylelint
 code --install-extension netcorext.uuid-generator
-code --install-extension rangav.vscode-thunder-client
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension mikestead.dotenv
 code --install-extension ms-vscode-remote.remote-wsl
